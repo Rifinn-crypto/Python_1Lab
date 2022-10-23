@@ -25,3 +25,7 @@ with open(write_to_file, "w") as file:
         switch_previous_day_url = "http://" + final_previous_day_url
         finish_current_day = str(final_current_day)[2:-2]
         finish_current_day = finish_current_day.replace("'", "")
+        with open(write_to_file, "a", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=HEADER)
+            writer.writerow({"Day": finish_current_day, "Exchange rate": current_course})
+
