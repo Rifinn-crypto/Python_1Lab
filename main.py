@@ -23,5 +23,5 @@ with open(write_to_file, "w") as file:
         previous_day_url = json_pars["PreviousURL"]
         final_previous_day_url = previous_day_url.replace("//", "")
         switch_previous_day_url = "http://" + final_previous_day_url
-        finish_current_day = str(final_current_day)[1:-1]
+        finish_current_day = str(final_current_day)[2:-2]
         finish_current_day = finish_current_day.replace("'", "")
