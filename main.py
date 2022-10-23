@@ -17,3 +17,5 @@ with open(write_to_file, "w") as file:
         json_pars = json.loads(html_text)
         current_day = json_pars["Date"]
         final_current_day = re.findall(r"(\d{4}\-\d{2}\-\d{2})", current_day)
+
+        current_course = json_pars["Valute"]["USD"]["Value"]
