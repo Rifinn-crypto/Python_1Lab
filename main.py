@@ -19,3 +19,7 @@ with open(write_to_file, "w") as file:
         final_current_day = re.findall(r"(\d{4}\-\d{2}\-\d{2})", current_day)
 
         current_course = json_pars["Valute"]["USD"]["Value"]
+
+        previous_day_url = json_pars["PreviousURL"]
+        final_previous_day_url = previous_day_url.replace("//", "")
+        switch_previous_day_url = "http://" + final_previous_day_url
