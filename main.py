@@ -12,3 +12,8 @@ with open(write_to_file, "w") as file:
     dw = csv.DictWriter(file, delimiter=',',
                         fieldnames=HEADER)
     dw.writeheader()
+    while True:
+        html_text = requests.get(URL).text
+        json_pars = json.loads(html_text)
+        current_day = json_pars["Date"]
+        final_current_day = re.findall(r"(\d{4}\-\d{2}\-\d{2})", current_day)
